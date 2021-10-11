@@ -66,9 +66,3 @@ mod_ship_identification_server <- function(id){
   })
   
 }
-    
-## To be copied in the UI
-# mod_ship_identification_ui("ship_identification_ui_1")
-    
-## To be copied in the server
-# mod_ship_identification_server("ship_identification_ui_1")

@@ -29,10 +29,6 @@ mod_travel_information_server <- function(id,
     ns <- session$ns
  
     output$textos_prueba <- shiny::renderUI({
-      # texto_1 <- str_c("The total distance traveled is: ",total_dstnc())
-      # texto_2 <- str_c("During the travel, the ship had parked: ",times_prk()," times")
-      # texto_3 <- 
-      # texto_4 <- str_c("The ship had traveled from: ",)
       
         shiny.semantic::grid(
           grid_template = shiny.semantic::grid_template(
@@ -94,15 +90,6 @@ mod_travel_information_server <- function(id,
                     br(),
                     dates_total()[2])))
         )
-      # ,
-      #   
-      #   h4(texto_1),
-      #   h4(texto_2),
-      #   h4(texto_3),
-      #   h4(texto_4)
-      #   # h4(texto_5),
-      #   # h4(texto_6)
-      # )
       
       
     })
@@ -110,8 +97,4 @@ mod_travel_information_server <- function(id,
   })
 }
     
-## To be copied in the UI
-# mod_travel_information_ui("travel_information_ui_1")
-    
-## To be copied in the server
-# mod_travel_information_server("travel_information_ui_1")
+

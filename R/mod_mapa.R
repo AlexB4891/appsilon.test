@@ -121,8 +121,3 @@ mod_mapa_server <- function(id,
   })
 }
     
-## To be copied in the UI
-# mod_mapa_ui("mapa_ui_1")
-    
-## To be copied in the server
-# mod_mapa_server("mapa_ui_1")

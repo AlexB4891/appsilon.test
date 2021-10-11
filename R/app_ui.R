@@ -1,11 +1,3 @@
-
-my_layout <- shiny.semantic::grid_template(default = list(
-  areas = rbind(
-    c("title", "map"),
-    c("info", "map")
-  )
-))
-
 #' The application User-Interface
 #' 
 #' @param request Internal parameter for `{shiny}`. 

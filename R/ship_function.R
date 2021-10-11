@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' 
-#' filter_ship_type(ship_data = ship_data,type_of_ship = "Cargo")
+#' filter_ship_type(ship_data = ship_data)
 #' 
 
 

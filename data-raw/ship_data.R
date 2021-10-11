@@ -1,10 +1,17 @@
 ## code to prepare `ship_data` dataset goes here
 
+# Reading data:
+
 ship_data <- readr::read_csv("data-raw/ships.csv")
+
+# Renaming data names:
 
 ship_data <- ship_data %>%
   dplyr::select(-c(PORT,SHIPTYPE)) %>%
   dplyr::rename_with(.cols = dplyr::everything(),.fn = stringr::str_to_lower)
+
+
+# Transformations:
 
 ship_data <- ship_data %>%
   dplyr::group_by(ship_id) %>%
@@ -27,6 +34,9 @@ ship_data <- ship_data %>%
       .fns = ~round(.x,2))
   )
 
+
+# Grouped operations:
+
 ship_data <- ship_data %>%
   dplyr::group_by(ship_id) %>%
   dplyr::mutate(max_distance = max(distance_m,na.rm = TRUE),
@@ -36,10 +46,17 @@ ship_data <- ship_data %>%
 
 ship_data <- ship_data %>%
   dplyr::select(-c(speed,heading,course,destination))
+
+# Cleaning memory:
+
 gc()
+
+# Creating a list:
 
 ship_data <- ship_data %>%
   split(.$ship_type) %>%
   purrr::map(~.x %>% split(.$ship_id))
 
+
+# Writing data for usage in package:
 usethis::use_data(ship_data, overwrite = TRUE)
