@@ -8,7 +8,8 @@ ship_data <- readr::read_csv("data-raw/ships.csv")
 
 ship_data <- ship_data %>%
   dplyr::select(-c(PORT,SHIPTYPE)) %>%
-  dplyr::rename_with(.cols = dplyr::everything(),.fn = stringr::str_to_lower)
+  dplyr::rename_with(.cols = dplyr::everything(),
+                     .fn = stringr::str_to_lower)
 
 
 # Transformations:
@@ -55,7 +56,7 @@ gc()
 
 ship_data <- ship_data %>%
   split(.$ship_type) %>%
-  purrr::map(~.x %>% split(.$ship_id))
+  purrr::map(~.x %>% split(.$shipname))
 
 
 # Writing data for usage in package:
