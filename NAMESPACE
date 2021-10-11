@@ -2,6 +2,7 @@
 
 export("%>%")
 export(run_app)
+export(travel_ship_description)
 import(shiny)
 importFrom(golem,activate_js)
 importFrom(golem,add_resource_path)

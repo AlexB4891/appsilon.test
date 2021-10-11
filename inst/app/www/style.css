@@ -1,0 +1,19 @@
+body {
+  margin: 0 !important;
+  background: #DDF4F8 !important;
+}
+
+@media screen and (min-width: 845px) {
+  #mymap {
+    height: 100vh !important;
+  }
+} 
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.shiny-output-error { visibility: hidden; }
+.shiny-output-error:before { visibility: hidden; }
